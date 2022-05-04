@@ -2,7 +2,7 @@
 
 module.exports = {
   extends: [
-    'stylelint-config-standard',
+    "stylelint-config-standard",
     // Add other extends before this line
     "stylelint-prettier/recommended",
   ],
@@ -17,14 +17,17 @@ module.exports = {
         ignorePseudoClasses: ["global"],
       },
     ],
-    "order/properties-order": concentricOrder.rules[
-      "order/properties-order"
-    ].map((group) =>
-      group.map((rule) => ({
+    "order/properties-order": [
+      concentricOrder.rules["order/properties-order"][0].map((rule) => ({
         properties: rule.properties,
-        emptyLineBefore: "always",
+        emptyLineBefore: "threshold",
         noEmptyLineBetween: true,
-      }))
-    ),
+      })),
+      {
+        "unspecified": "bottom",
+        "emptyLineBeforeUnspecified": "threshold",
+        "emptyLineMinimumPropertyThreshold": 6
+      }
+    ],
   },
 };
