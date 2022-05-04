@@ -1,0 +1,37 @@
+{
+  "name": "stylelint-config",
+  "version": "1.0.0",
+  "description": "My personal config",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thiagojedi/stylelint-config.git"
+  },
+  "author": "Thiago 'Jedi' Cerqueira <thiagoa7@gmail.com>",
+  "license": "Unlicense",
+  "bugs": {
+    "url": "https://github.com/thiagojedi/stylelint-config/issues"
+  },
+  "homepage": "https://github.com/thiagojedi/stylelint-config#readme",
+  "dependencies": {
+    "stylelint-config-concentric-order": "^5.0.0",
+    "stylelint-config-standard": "^25.0.0",
+    "stylelint-order": "^5.0.0",
+    "stylelint-prettier": "^2.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^17.0.31"
+  },
+  "peerDependencies": {
+    "prettier": "^2.0.0",
+    "stylelint": "^14.0.0"
+  },
+  "peerDependenciesMeta": {
+    "prettier": {
+      "optional": true
+    }
+  }
+}
