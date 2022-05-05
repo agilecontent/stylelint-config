@@ -18,6 +18,7 @@
   "homepage": "https://github.com/thiagojedi/stylelint-config#readme",
   "dependencies": {
     "stylelint-config-concentric-order": "^5.0.0",
+    "stylelint-config-prettier": "^9.0.3",
     "stylelint-config-standard": "^25.0.0",
     "stylelint-order": "^5.0.0",
     "stylelint-prettier": "^2.0.0"
