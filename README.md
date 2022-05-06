@@ -4,7 +4,7 @@ Base configuration for stylelint, used internally by @agilecontent
 
 ## How to use
 
-Add this package as a dev dependency, alongside stylelint:
+Add this repository as a dev dependency, alongside stylelint:
 
 ```shell
 npm i -D @agilecontent/stylelint-config@github:agilecontent/stylelint-config stylelint
