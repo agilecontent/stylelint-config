@@ -1,21 +1,21 @@
 {
-  "name": "stylelint-config",
+  "name": "@agilecontent/stylelint-config",
   "version": "1.0.0",
-  "description": "My personal config",
+  "description": "Base configuration for stylelint, used internally",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/thiagojedi/stylelint-config.git"
+    "url": "git+https://github.com/agilecontent/stylelint-config.git"
   },
   "author": "Thiago 'Jedi' Cerqueira <thiagoa7@gmail.com>",
   "license": "Unlicense",
   "bugs": {
-    "url": "https://github.com/thiagojedi/stylelint-config/issues"
+    "url": "https://github.com/agilecontent/stylelint-config/issues"
   },
-  "homepage": "https://github.com/thiagojedi/stylelint-config#readme",
+  "homepage": "https://github.com/agilecontent/stylelint-config#readme",
   "dependencies": {
     "stylelint-config-concentric-order": "^5.0.0",
     "stylelint-config-prettier": "^9.0.3",
