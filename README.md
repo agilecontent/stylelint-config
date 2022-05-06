@@ -10,7 +10,7 @@ Add this repository as a dev dependency, alongside stylelint:
 npm i -D @agilecontent/stylelint-config@github:agilecontent/stylelint-config stylelint
 ```
 
-Extend your this config in your project's. Example with .stylelintrc.js:
+Extend this config in your project's. Example with .stylelintrc.js:
 
 ```js
 module.exports = {
