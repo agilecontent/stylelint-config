@@ -1,7 +1,7 @@
 ﻿// Groups of CSS properties in Concentric order
 const groups = [
-  ['all', 'appearance','box-sizing'],
-  ['display', 'position', 'top', 'right', 'bottom', 'left','float', 'clear'],
+  ['all', 'appearance', 'box-sizing'],
+  ['display', 'position', 'top', 'right', 'bottom', 'left', 'float', 'clear'],
   [
     'flex',
     'flex-basis',
@@ -9,7 +9,7 @@ const groups = [
     'flex-flow',
     'flex-grow',
     'flex-shrink',
-    'flex-wrap'
+    'flex-wrap',
   ],
   [
     'grid',
@@ -30,9 +30,17 @@ const groups = [
     'gap',
     'grid-gap',
     'grid-row-gap',
-    'grid-column-gap'
+    'grid-column-gap',
   ],
-  ['align-content', 'align-items', 'align-self','justify-content', 'justify-items', 'justify-self','order'],
+  [
+    'align-content',
+    'align-items',
+    'align-self',
+    'justify-content',
+    'justify-items',
+    'justify-self',
+    'order',
+  ],
   [
     'columns',
     'column-gap',
@@ -43,7 +51,7 @@ const groups = [
     'column-rule-color',
     'column-span',
     'column-count',
-    'column-width'
+    'column-width',
   ],
   [
     'backface-visibility',
@@ -51,14 +59,14 @@ const groups = [
     'perspective-origin',
     'transform',
     'transform-origin',
-    'transform-style'
+    'transform-style',
   ],
   [
     'transition',
     'transition-delay',
     'transition-duration',
     'transition-property',
-    'transition-timing-function'
+    'transition-timing-function',
   ],
   ['visibility', 'opacity', 'z-index'],
   ['margin', 'margin-top', 'margin-right', 'margin-bottom', 'margin-left'],
@@ -67,7 +75,7 @@ const groups = [
     'outline-offset',
     'outline-width',
     'outline-style',
-    'outline-color'
+    'outline-color',
   ],
   [
     'border',
@@ -79,28 +87,28 @@ const groups = [
     'border-top-width',
     'border-right-width',
     'border-bottom-width',
-    'border-left-width'
-  ,  'border-style',
+    'border-left-width',
+    'border-style',
     'border-top-style',
     'border-right-style',
     'border-bottom-style',
-    'border-left-style'
-  ,  'border-radius',
+    'border-left-style',
+    'border-radius',
     'border-top-left-radius',
     'border-top-right-radius',
     'border-bottom-left-radius',
-    'border-bottom-right-radius'
-  ,  'border-color',
+    'border-bottom-right-radius',
+    'border-color',
     'border-top-color',
     'border-right-color',
     'border-bottom-color',
-    'border-left-color'
-  ,  'border-image',
+    'border-left-color',
+    'border-image',
     'border-image-source',
     'border-image-width',
     'border-image-outset',
     'border-image-repeat',
-    'border-image-slice'
+    'border-image-slice',
   ],
   ['box-shadow'],
   ['isolation', 'mix-blend-mode'],
@@ -114,18 +122,18 @@ const groups = [
     'background-origin',
     'background-position',
     'background-repeat',
-    'background-size'
+    'background-size',
   ],
   ['cursor'],
   ['padding', 'padding-top', 'padding-right', 'padding-bottom', 'padding-left'],
-  ['width', 'min-width', 'max-width','height', 'min-height', 'max-height'],
+  ['width', 'min-width', 'max-width', 'height', 'min-height', 'max-height'],
   ['overflow', 'overflow-x', 'overflow-y', 'resize'],
   [
     'list-style',
     'list-style-type',
     'list-style-position',
     'list-style-image',
-    'caption-side'
+    'caption-side',
   ],
   ['table-layout', 'border-collapse', 'border-spacing', 'empty-cells'],
   [
@@ -137,7 +145,7 @@ const groups = [
     'animation-iteration-count',
     'animation-direction',
     'animation-fill-mode',
-    'animation-play-state'
+    'animation-play-state',
   ],
   ['vertical-align'],
   [
@@ -154,16 +162,14 @@ const groups = [
     'text-decoration-style',
     'text-rendering',
     'text-shadow',
-    'text-overflow'
-        ,
+    'text-overflow',
     'line-height',
     'word-spacing',
     'letter-spacing',
     'white-space',
     'word-break',
     'word-wrap',
-    'color'
-  ,
+    'color',
     'font',
     'font-family',
     'font-kerning',
@@ -174,43 +180,49 @@ const groups = [
     'font-smoothing',
     'osx-font-smoothing',
     'font-variant',
-    'font-style'
+    'font-style',
   ],
   ['content', 'quotes'],
   ['counter-reset', 'counter-increment'],
   ['page-break-before', 'page-break-after', 'page-break-inside'],
-  ['pointer-events', 'will-change']
-]
+  ['pointer-events', 'will-change'],
+];
+
+const concentricOrderConfig = require('stylelint-config-concentric-order');
 
 module.exports = {
   extends: [
-    "stylelint-config-concentric-order",
-    "stylelint-config-standard",
+    'stylelint-config-concentric-order',
+    'stylelint-config-standard',
     // Add other extends before this line
-    "stylelint-prettier/recommended",
-  ],
-  plugins: [
-    "stylelint-order", //To keep order of properties
+    'stylelint-config-prettier',
   ],
   rules: {
-    "declaration-empty-line-before": null,
-    "selector-pseudo-class-no-unknown": [
+    'declaration-empty-line-before': null,
+    'selector-pseudo-class-no-unknown': [
       true,
       {
-        ignorePseudoClasses: ["global"],
+        ignorePseudoClasses: ['global'],
       },
     ],
-    "order/properties-order": [
+    'order/order': [
+      concentricOrderConfig.rules['order/order'],
+      {
+        severity: 'warning',
+      },
+    ],
+    'order/properties-order': [
       groups.map((group) => ({
         properties: group,
-        emptyLineBefore: "threshold",
+        emptyLineBefore: 'threshold',
         noEmptyLineBetween: true,
       })),
       {
-        "unspecified": "bottom",
-        "emptyLineBeforeUnspecified": "threshold",
-        "emptyLineMinimumPropertyThreshold": 6
-      }
+        severity: 'warning',
+        unspecified: 'bottom',
+        emptyLineBeforeUnspecified: 'threshold',
+        emptyLineMinimumPropertyThreshold: 6,
+      },
     ],
   },
 };
