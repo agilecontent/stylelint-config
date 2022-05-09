@@ -4,7 +4,8 @@
   "description": "Base configuration for stylelint, used internally",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "prepare": "husky install",
+    "pre-commit": "lint-staged"
   },
   "repository": {
     "type": "git",
@@ -20,11 +21,13 @@
     "stylelint-config-concentric-order": "^5.0.0",
     "stylelint-config-prettier": "^9.0.3",
     "stylelint-config-standard": "^25.0.0",
-    "stylelint-order": "^5.0.0",
     "stylelint-prettier": "^2.0.0"
   },
   "devDependencies": {
-    "@types/node": "^17.0.31"
+    "@agilecontent/prettier-config": "github:agilecontent/prettier-config",
+    "@types/node": "^17.0.31",
+    "husky": "^8.0.1",
+    "lint-staged": "^12.4.1"
   },
   "peerDependencies": {
     "prettier": "^2.0.0",
@@ -34,5 +37,9 @@
     "prettier": {
       "optional": true
     }
+  },
+  "prettier": "@agilecontent/prettier-config",
+  "lint-staged": {
+    "*.{js,md,json}": "prettier --write"
   }
 }
