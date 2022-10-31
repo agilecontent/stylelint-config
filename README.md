@@ -7,8 +7,14 @@ Base configuration for stylelint, used internally by @agilecontent
 Add this repository as a dev dependency, alongside stylelint:
 
 ```shell
-npm i -D @agilecontent/stylelint-config@github:agilecontent/stylelint-config stylelint
+npm i -D @agilecontent/stylelint-config stylelint
 ```
+
+or
+
+````
+yarn add -D @agilecontent/stylelint-config stylelint
+```v
 
 Extend this config in your project's. Example with .stylelintrc.js:
 
@@ -22,7 +28,7 @@ module.exports = {
     //Add your own rules here
   },
 };
-```
+````
 
 **IMPORTANT:** This config includes stylelint-config-prettier, so it is very important to put this
 as the last extended config to prevent conflicts
