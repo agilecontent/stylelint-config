@@ -1,6 +1,6 @@
 {
   "name": "@agilecontent/stylelint-config",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Base configuration for stylelint, used internally",
   "main": "index.js",
   "scripts": {
@@ -31,7 +31,7 @@
   },
   "peerDependencies": {
     "prettier": ">= 2.0.0",
-    "stylelint": "^14.0.0"
+    "stylelint": ">= 14.0.0"
   },
   "peerDependenciesMeta": {
     "prettier": {
