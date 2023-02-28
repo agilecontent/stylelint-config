@@ -191,12 +191,7 @@ const groups = [
 const concentricOrderConfig = require('stylelint-config-concentric-order');
 
 module.exports = {
-  extends: [
-    'stylelint-config-concentric-order',
-    'stylelint-config-standard',
-    // Add other extends before this line
-    'stylelint-config-prettier',
-  ],
+  extends: ['stylelint-config-concentric-order', 'stylelint-config-standard'],
   rules: {
     'declaration-empty-line-before': null,
     'selector-pseudo-class-no-unknown': [
