@@ -209,14 +209,11 @@ module.exports = {
     'order/properties-order': [
       groups.map((group) => ({
         properties: group,
-        emptyLineBefore: 'threshold',
         noEmptyLineBetween: true,
       })),
       {
         severity: 'warning',
         unspecified: 'bottom',
-        emptyLineBeforeUnspecified: 'threshold',
-        emptyLineMinimumPropertyThreshold: 6,
       },
     ],
   },
